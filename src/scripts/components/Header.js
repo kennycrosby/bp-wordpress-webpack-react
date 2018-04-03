@@ -1,33 +1,38 @@
 import React from 'react';
 import _ from 'lodash';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import DataStore from '../flux/stores/DataStore.js'
 
 export class Header extends React.Component {   
    
   render() {
-    let allPages = DataStore.getAllPages();
-    allPages = _.sortBy(allPages, [function(page) { return page.menu_order; }]); // Sort pages by order
 
     return (
       <div className="header">
-        <Link to="/" style={{marginRight: '10px'}} >Home</Link>
+        
+        <ul>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/work">Work</NavLink>
+          </li>
+          <li>
+            <NavLink to="/careers">Careers</NavLink>
+          </li>
+          <li>
+            <NavLink to="/stories">Stories</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+        </ul>
 
-        {allPages.map((page) => {
-          if(page.slug != 'home'){
-             return(
-                  <Link 
-                      key={page.id} 
-                      to={`/${page.slug}`} 
-                      style={{marginRight: '10px'}}
-                  >
-                      {page.title.rendered}
-                  </Link>
-              )                     
-          }
-        })}
       </div>
     );
   }

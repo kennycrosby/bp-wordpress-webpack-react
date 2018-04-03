@@ -3,6 +3,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+RewriteRule ^static/(.*)$ /wp-content/themes/react-wordpress-theme/$1 [R=301,NC,L]
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -14,6 +14,6 @@
 
 get_header(); ?>
 
-    <main id="main" class="site-main" role="main" aria-live="assertive" tabindex="-1"></main><!-- #main -->
+  <main id="app" class="site-main" role="main"></main><!-- #main -->
 
 <?php get_footer(); ?>

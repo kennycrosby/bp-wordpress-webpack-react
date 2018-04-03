@@ -1,6 +1,8 @@
 import React from 'react';
 import renderHTML from 'react-render-html';
 
+import { Link } from 'react-router-dom';
+
 import DataStore from '../flux/stores/DataStore.js'
 
 export class DefaultPage extends React.Component {
